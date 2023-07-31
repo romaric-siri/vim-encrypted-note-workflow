@@ -15,10 +15,14 @@ Install fzf and nvim.
 ```
 
 ```bash
-your_secret_key="YOUR_SECRET_KEY"
-for file in $(find . -type f -name "*.txt"); do
-    openssl enc -aes-256-cbc -in "$file" -out "$file.enc" -k "$your_secret_key"
-    rm "$file"
+votre_cle_secrete="REALLY SECRET KEY"
+iterations=100000
+
+# Use a while loop with null-terminated input from find to handle filenames with spaces
+find . -type f -name "*.md" -print0 | while IFS= read -r -d '' fichier; do
+    encrypted_file="$fichier.enc"
+    openssl enc -aes-256-cbc -pbkdf2 -iter "$iterations" -in "$fichier" -out "$encrypted_file" -k "$votre_cle_secrete"
+    rm "$fichier"
 done
 ```
 
