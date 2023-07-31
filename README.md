@@ -33,7 +33,7 @@ done
 
 ## Now you can decrypt the notes :
 It will decrypt the file and open it in a vim editor. It re-encrypts it when you close it.
-```
+```bash
 n () {
 	decrypt_and_nvim $(find . -type f -name "*.enc" | fzf --preview "head {}")
 }
