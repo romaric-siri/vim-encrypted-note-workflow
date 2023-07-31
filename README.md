@@ -4,11 +4,13 @@ This is a vim encrypted note workflow
 ### Encrypt a whole existing directory
 
 ### Input
+```
 📂 root
   ├─ 📁 dir1
   │    └─ 📄 file1.txt
   └─ 📁 dir2
        └─ 📄 file2.txt
+```
 
 ```bash
 your_secret_key="YOUR_SECRET_KEY"
@@ -19,8 +21,10 @@ done
 ```
 
 ### Output
+```
 📂 root
   ├─ 📁 dir1
   │    └─ 🔒 file1.enc
   └─ 📁 dir2
        └─ 🔒 file2.enc
+```
