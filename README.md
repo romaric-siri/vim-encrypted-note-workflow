@@ -31,8 +31,8 @@ done
        └─ 🔒 file2.enc
 ```
 
-## Now you can decrypt the notes on the fly and view them with the neovim editor for example :
-It decrypts the notes and reencrypt when you close the editor.
+## Now you can decrypt the notes :
+It will decrypt the file and open it in a vim editor. It re-encrypts it when you close it.
 ```
 n () {
 	decrypt_and_nvim $(find . -type f -name "*.enc" | fzf --preview "head {}")
